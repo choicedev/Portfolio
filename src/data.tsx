@@ -4,7 +4,8 @@ import { Experience, Project, SkillGroup } from './types';
 export const experiences: Experience[] = [
   {
     title: "Desenvolvedor Android Jr.",
-    company: "Namos Digital",
+    company: "Namoa Digital",
+    link: "https://www.namoadigital.com/",
     period: "Jul/2022 – Atual",
     description: `
       Atuo no desenvolvimento e manutenção de aplicativos Android nativos com:
@@ -21,6 +22,7 @@ export const experiences: Experience[] = [
   {
     title: "Estágio Desenvolvedor Android",
     company: "MaxProcess",
+    link: "https://maxprocess.com.br/index.php/pt/",
     period: "Jun/2021 – Jun/2022",
     description: `
       Desenvolvimento e manutenção de aplicativo Android com:
@@ -36,11 +38,12 @@ export const experiences: Experience[] = [
   },
   {
     title: "Auxiliar de T.I.",
-    company: "Santi Engenharia",
+    company: "Sanit Engenharia",
+    link: "https://www.sanit.com.br/",
     period: "Jan/2020 – Mai/2021",
     description: "Suporte técnico e assistência em infraestrutura de TI",
     technologies: []
-  }
+  },
 ];
 
 export const projects: Project[] = [

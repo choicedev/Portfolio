@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           Fabricio <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Zamora</span>
         </h1>
 
-        <h2 className="text-xl sm:text-2xl mt-2 text-slate-300">&lt; Desenvolvedor Mobile Jr. /&gt;</h2>
+        <h2 className="text-xl sm:text-2xl mt-2 text-slate-300">&lt; Desenvolvedor Android Jr /&gt;</h2>
 
         <div className="flex gap-4 mt-6">
           <a

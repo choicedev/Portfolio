@@ -35,7 +35,7 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({ skillGroup, className = '
           "
           aria-hidden="true"
         >
-          <Icon className="text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+          <Icon />
         </div>
         <h3 
           id={categoryId}
@@ -50,12 +50,10 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({ skillGroup, className = '
           <span 
             key={`${skill}-${categoryId}`}
             className="
-              px-3 py-1.5 bg-slate-700/80 text-gray-300 rounded-full 
+              px-3 py-1.5 bg-slate-700/80 text-blue-300 rounded-md 
               hover:bg-slate-600 hover:text-white transition-all duration-200
               text-sm md:text-base hover:scale-105
             "
-            aria-label={`Habilidade: ${skill}`}
-            title={skill}
           >
             {skill}
           </span>

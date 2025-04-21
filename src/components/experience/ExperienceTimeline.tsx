@@ -34,7 +34,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
         
         <div className="mt-16 text-center">
           <p className="text-gray-400">
-            <span className="font-semibold text-white">Total de experiência:</span> 3+ anos no desenvolvimento de aplicações mobile
+            <span className="font-semibold text-white">Total de experiência:</span> 3+ anos no desenvolvimento de aplicações Android
           </p>
         </div>
       </div>

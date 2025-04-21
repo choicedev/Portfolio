@@ -19,7 +19,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         
         <p className="text-gray-400 mb-12 max-w-2xl">
           Uma seleção dos meus projetos mais recentes demonstrando minhas habilidades
-          em desenvolvimento mobile com Kotlin e Java.
+          em desenvolvimento android com Kotlin e Java.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink, Code2 } from 'lucide-react';
 import { Project } from '../../types';
 
 interface ProjectCardProps {
@@ -41,17 +41,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         
         <p className="text-gray-300 mb-6 min-h-[60px]">{project.description}</p>
         
-        <div className="flex flex-wrap gap-2 mb-4">
-          <div className="flex items-center text-gray-400 mb-2">
-            <Code size={16} className="mr-2" />
+        <div className="fmt-4 pt-4 border-t border-slate-700/50">
+          <div className="flex items-center text-sm text-gray-400 mb-2">
+            <Code2 size={16} className="mr-2 text-blue-400" />
             <span className="text-sm">Tech Stack:</span>
           </div>
           
-          <div className="w-full flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech, index) => (
               <span 
                 key={index} 
-                className="px-3 py-1 text-sm bg-slate-700 text-blue-300 rounded-full"
+                className="px-2 py-1 bg-slate-700/50 text-sm rounded-md text-blue-300"
               >
                 {tech}
               </span>
