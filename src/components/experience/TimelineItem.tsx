@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarRange, Building2 } from 'lucide-react';
+import { CalendarRange, Building2, Code2 } from 'lucide-react'; // Adicionei o ícone Code2
 import { Experience } from '../../types';
 
 interface TimelineItemProps {
@@ -31,7 +31,27 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ experience, position }) => 
             {experience.period}
           </p>
           
-          <p className="text-gray-400">{experience.description}</p>
+          <p className="text-gray-400 mb-4 whitespace-pre-line">{experience.description}</p>
+          
+          {/* Seção de Tecnologias */}
+          {experience.technologies && experience.technologies.length > 0 && (
+            <div className="mt-4 pt-4 border-t border-slate-700/50">
+              <div className="flex items-center text-sm text-gray-400 mb-2">
+                <Code2 size={16} className="mr-2 text-blue-400" />
+                <span className="font-medium">Tecnologias:</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {experience.technologies.map((tech, index) => (
+                  <span 
+                    key={index}
+                    className="px-2 py-1 bg-slate-700/50 text-sm rounded-md text-blue-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       

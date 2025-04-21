@@ -3,22 +3,43 @@ import { Experience, Project, SkillGroup } from './types';
 
 export const experiences: Experience[] = [
   {
-    title: "Desenvolvedor Mobile Jr.",
-    company: "Namoa Digital",
+    title: "Desenvolvedor Android Jr.",
+    company: "Namos Digital",
     period: "Jul/2022 – Atual",
-    description: "Desenvolvimento de aplicativos móveis utilizando Kotlin e Java."
+    description: `
+      Atuo no desenvolvimento e manutenção de aplicativos Android nativos com:
+      ✔ Kotlin e Java seguindo boas práticas
+      ✔ Arquiteturas MVVM e MVP (Clean Architecture)
+      ✔ Jetpack Compose e XML para interfaces
+      ✔ Integração com APIs REST (Retrofit/Postman)
+      ✔ Room Database para dados locais
+      ✔ Testes unitários e análise de logs (PL/SQL)
+      ✔ Metodologias ágeis (JIRA)
+    `,
+    technologies: ["Kotlin", "Java", "Jetpack Compose", "MVVM", "Retrofit", "Room", "Postman", "JIRA"]
   },
   {
-    title: "Desenvolvedor Mobile",
+    title: "Estágio Desenvolvedor Android",
     company: "MaxProcess",
     period: "Jun/2021 – Jun/2022",
-    description: "Criação e manutenção de aplicativos Android."
+    description: `
+      Desenvolvimento e manutenção de aplicativo Android com:
+      ✔ Correção de bugs e novas features (Azure DevOps)
+      ✔ Kotlin/Java com princípios de código limpo
+      ✔ Jetpack Compose para UI moderna
+      ✔ Integração de APIs (Postman)
+      ✔ Versionamento (Git/Git Flow)
+      ✔ Metodologia Scrum
+      ✔ Análise de dados (SQL Server)
+    `,
+    technologies: ["Kotlin", "Java", "Jetpack Compose", "Azure DevOps", "Git Flow", "Postman", "SQL Server"]
   },
   {
     title: "Auxiliar de T.I.",
-    company: "Sanit Engenharia",
+    company: "Santi Engenharia",
     period: "Jan/2020 – Mai/2021",
-    description: "Suporte técnico e assistência em T.I."
+    description: "Suporte técnico e assistência em infraestrutura de TI",
+    technologies: []
   }
 ];
 
