@@ -7,7 +7,13 @@ const Hero: React.FC = () => {
 
       <section className="min-h-screen flex flex-col items-center justify-center text-center p-4">
         <span className="text-sm tracking-widest text-indigo-400 mb-2">FAZENDO APPS COM CAFÉ E CÓDIGO ☕</span>
-        
+
+        <h1 className="text-4xl sm:text-6xl font-bold text-white">
+          Fabricio <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Zamora</span>
+        </h1>
+
+        <h2 className="text-xl sm:text-2xl mt-2 mb-3 text-slate-300">&lt; Desenvolvedor Android Jr. /&gt;</h2>
+
         <div className="bg-indigo-600 text-white px-3 py-1 rounded-full mb-4 text-sm inline-flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
@@ -17,12 +23,6 @@ const Hero: React.FC = () => {
           </svg>
           3+ anos de experiência
         </div>
-
-        <h1 className="text-4xl sm:text-6xl font-bold text-white">
-          Fabricio <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Zamora</span>
-        </h1>
-
-        <h2 className="text-xl sm:text-2xl mt-2 text-slate-300">&lt; Desenvolvedor Android Jr /&gt;</h2>
 
         <div className="flex gap-4 mt-6">
           <a

@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
       ✔ Jetpack Compose e XML para interfaces
       ✔ Integração com APIs REST (Retrofit/Postman)
       ✔ Room Database para dados locais
-      ✔ Testes unitários e análise de logs (PL/SQL)
+      ✔ Análise de logs e monitoramento com PL/SQL
       ✔ Metodologias ágeis (JIRA)
     `,
     technologies: ["Kotlin", "Java", "Jetpack Compose", "MVVM", "Retrofit", "Room", "Postman", "JIRA"]

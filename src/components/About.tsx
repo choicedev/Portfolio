@@ -7,10 +7,10 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2">
             <h2 className="text-3xl font-bold mb-2 relative inline-block">
-              <span className="bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
+              <span className="mt-10 bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
                 Sobre mim
               </span>
-              <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-blue-400 to-violet-500"></span>
+              <span className="absolute bottom-0 mb left-0 w-1/2 h-1 bg-gradient-to-r from-blue-400 to-violet-500"></span>
             </h2>
 
             <p className="text-gray-300 mt-6 leading-relaxed">
@@ -35,7 +35,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex justify-center items-center">
+          <div className="w-full md:w-1/2 flex justify-end items-end">
             <div className="relative w-150 h-150 rounded-full p-[5px] shadow-lg hover:shadow-blue-500/40 transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 rounded-full animate-spin-slow bg-gradient-to-r from-blue-500 via-pink-500 to-violet-600 blur-sm" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-900 z-10">
