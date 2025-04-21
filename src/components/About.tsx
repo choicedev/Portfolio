@@ -36,17 +36,17 @@ const About: React.FC = () => {
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center items-center">
-  <div className="relative w-150 h-150 rounded-full p-[5px] shadow-lg hover:shadow-blue-500/40 transition-all duration-500 hover:scale-105">
-    <div className="absolute inset-0 rounded-full animate-spin-slow bg-gradient-to-r from-blue-500 via-pink-500 to-violet-600 blur-sm" />
-    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-900 z-10">
-      <img
-        src="https://avatars.githubusercontent.com/u/16473920?s=400&u=af33c9841b008af43d01d1beaa1fafb02820f5db&v=4"
-        alt="Fabricio Zamora"
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
+            <div className="relative w-150 h-150 rounded-full p-[5px] shadow-lg hover:shadow-blue-500/40 transition-all duration-500 hover:scale-105">
+              <div className="absolute inset-0 rounded-full animate-spin-slow bg-gradient-to-r from-blue-500 via-pink-500 to-violet-600 blur-sm" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-900 z-10">
+                <img
+                  src="https://avatars.githubusercontent.com/u/16473920?s=400&u=af33c9841b008af43d01d1beaa1fafb02820f5db&v=4"
+                  alt="Fabricio Zamora"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
