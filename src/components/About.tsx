@@ -38,7 +38,7 @@ const About: React.FC = () => {
           <div className="w-full md:w-1/2 flex justify-center items-center">
             <div className="w-64 h-64 rounded-full bg-gradient-to-r from-blue-500 to-violet-600 p-1 shadow-lg hover:shadow-blue-500/40 transition-all duration-500 hover:scale-105">
               <img
-                src="../../images/choice.jpg"
+                src="/images/choice.jpg"
                 alt="Fabricio Zamora"
                 className="w-full h-full object-cover rounded-full border-4 border-slate-900"
               />
