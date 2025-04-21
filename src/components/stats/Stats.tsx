@@ -8,26 +8,38 @@ const Stats: React.FC = () => {
   const [languages, setLanguages] = useState<LanguageStats>({});
   const [totalStars, setTotalStars] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchGitHubData = async () => {
       try {
-        // 1. Busca estatísticas básicas do usuário
+        // 1. Tenta recuperar dados do localStorage
+        const savedStats = localStorage.getItem('githubStats');
+        const savedLangs = localStorage.getItem('githubLanguages');
+        const savedStars = localStorage.getItem('githubTotalStars');
+
+        if (savedStats && savedLangs && savedStars) {
+          setStats(JSON.parse(savedStats));
+          setLanguages(JSON.parse(savedLangs));
+          setTotalStars(Number(savedStars));
+        }
+
+        // 2. Busca dados atualizados da API
         const userResponse = await fetch('https://api.github.com/users/choicedev');
+        if (!userResponse.ok) throw new Error('Falha ao buscar dados do usuário');
         const userData = await userResponse.json();
 
-        // 2. Busca repositórios para contar stars e linguagens
         const reposResponse = await fetch('https://api.github.com/users/choicedev/repos');
+        if (!reposResponse.ok) throw new Error('Falha ao buscar repositórios');
         const reposData = await reposResponse.json();
 
-        // Calcular total de stars
+        // Calcula total de stars
         const stars = reposData.reduce((acc: number, repo: any) => acc + repo.stargazers_count, 0);
 
-        // Calcular linguagens
+        // Calcula linguagens
         const langMap: LanguageStats = {};
         let totalLangBytes = 0;
 
-        // Para cada repositório, buscar linguagens
         for (const repo of reposData) {
           if (repo.languages_url) {
             const langResponse = await fetch(repo.languages_url);
@@ -40,17 +52,24 @@ const Stats: React.FC = () => {
           }
         }
 
-        // Normalizar porcentagens
+        // Normaliza porcentagens
         const normalizedLangs: LanguageStats = {};
         for (const [lang, bytes] of Object.entries(langMap)) {
           normalizedLangs[lang] = Number(((bytes / totalLangBytes) * 100).toFixed(1));
         }
 
+        // Atualiza estado e localStorage
         setStats(userData);
         setLanguages(normalizedLangs);
         setTotalStars(stars);
+        setError(null);
+
+        localStorage.setItem('githubStats', JSON.stringify(userData));
+        localStorage.setItem('githubLanguages', JSON.stringify(normalizedLangs));
+        localStorage.setItem('githubTotalStars', String(stars));
       } catch (error) {
-        console.error('Error fetching GitHub data:', error);
+        console.error('Erro ao buscar dados:', error);
+        setError('Dados podem estar desatualizados (últimos salvos)');
       } finally {
         setLoading(false);
       }
@@ -79,6 +98,12 @@ const Stats: React.FC = () => {
           <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-blue-400 to-violet-500"></span>
         </h2>
 
+        {error && (
+          <div className="bg-yellow-900/20 border border-yellow-700/50 text-yellow-500 p-3 rounded-md mb-4">
+            ⚠️ {error}
+          </div>
+        )}
+
         <p className="text-gray-400 mb-12 max-w-2xl">
           Métricas do meu trabalho no GitHub
         </p>
@@ -89,38 +114,29 @@ const Stats: React.FC = () => {
             value={stats?.public_repos || 0}
             icon={<GitBranch size={24} aria-hidden="true" />}
             color="blue"
-            description={`Total de ${stats?.public_repos || 0} repositórios públicos no GitHub`}
           />
-
           <StatCard
             title="Stars"
             value={totalStars}
             icon={<Star size={24} aria-hidden="true" />}
             color="yellow"
-            description={`${totalStars} estrelas recebidas em repositórios`}
-            loading={loading}
           />
-
           <StatCard
             title="Seguidores"
             value={stats?.followers || 0}
             icon={<Users size={24} aria-hidden="true" />}
             color="green"
-            description={`${stats?.followers || 0} desenvolvedores seguindo seu trabalho`}
           />
-
           <StatCard
             title="Linguagens"
             value={Object.keys(languages).length}
             icon={<Code size={24} aria-hidden="true" />}
             color="purple"
-            description={`Domínio em ${Object.keys(languages).length} linguagens de programação`}
           />
         </div>
 
         <div className="bg-slate-800/80 rounded-lg border border-slate-700/50 p-6">
           <h3 className="text-xl font-bold text-white mb-6">Linguagens Mais Usadas</h3>
-
           <div className="space-y-4">
             {Object.entries(languages)
               .sort((a, b) => b[1] - a[1])
@@ -136,7 +152,7 @@ const Stats: React.FC = () => {
                       className="h-2.5 rounded-full"
                       style={{
                         width: `${percent}%`,
-                        backgroundColor: getLanguageColor(lang)
+                        backgroundColor: getLanguageColor(lang),
                       }}
                     ></div>
                   </div>
@@ -149,7 +165,7 @@ const Stats: React.FC = () => {
   );
 };
 
-// Função auxiliar para cores baseadas na linguagem
+
 function getLanguageColor(language: string): string {
   const colors: Record<string, string> = {
     'Kotlin': '#A97BFF',
@@ -164,8 +180,7 @@ function getLanguageColor(language: string): string {
     'C++': '#f34b7d',
     'C#': '#178600',
   };
-
-  return colors[language] || '#3B82F6'; // Azul padrão se não encontrado
+  return colors[language] || '#3B82F6';
 }
 
 export default Stats;
