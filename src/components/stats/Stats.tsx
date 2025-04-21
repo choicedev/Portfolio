@@ -135,7 +135,7 @@ const Stats: React.FC = () => {
           />
         </div>
 
-        <div className="bg-slate-800/80 rounded-lg border border-slate-700/50 p-6">
+        {!error && (<div className="bg-slate-800/80 rounded-lg border border-slate-700/50 p-6">
           <h3 className="text-xl font-bold text-white mb-6">Linguagens Mais Usadas</h3>
           <div className="space-y-4">
             {Object.entries(languages)
@@ -159,7 +159,8 @@ const Stats: React.FC = () => {
                 </div>
               ))}
           </div>
-        </div>
+        </div>)}
+
       </div>
     </section>
   );
@@ -174,11 +175,6 @@ function getLanguageColor(language: string): string {
     'TypeScript': '#3178c6',
     'HTML': '#e34c26',
     'CSS': '#563d7c',
-    'Python': '#3572A5',
-    'Dart': '#00B4AB',
-    'Swift': '#F05138',
-    'C++': '#f34b7d',
-    'C#': '#178600',
   };
   return colors[language] || '#3B82F6';
 }
