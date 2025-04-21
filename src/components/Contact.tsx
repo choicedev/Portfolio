@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, MessageCircle } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
