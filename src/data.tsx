@@ -1,4 +1,4 @@
-import { Code, Database, Briefcase, Terminal, Smartphone, Server } from 'lucide-react';
+import { Code, Database, Briefcase, Terminal, Smartphone } from 'lucide-react';
 import { Experience, Project, SkillGroup } from './types';
 
 export const experiences: Experience[] = [
