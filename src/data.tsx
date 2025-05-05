@@ -64,6 +64,12 @@ export const projects: Project[] = [
     description: "App de anotações com MVVM, Hilt e Room. Um aplicativo completo para gerenciamento de notas com arquitetura moderna.",
     techStack: ["Kotlin", "MVVM", "Hilt", "Room"],
     link: "https://github.com/choicedev/Notes-Application"
+  },
+  {
+    title: "Alarm-Application",
+    description: "App de alarme com Clean Architecture, Hilt e AlarmManager. Um aplicativo moderno que permite criar, gerenciar e adiar alarmes com precisão e responsividade.",
+    techStack: ["Kotlin", "MVVM", "Hilt", "Room", "AlarmManager", "LifecycleService"],
+    link: "https://github.com/choicedev/ApplicationAlarm"
   }
 ];
 
