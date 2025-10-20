@@ -133,31 +133,6 @@ const Stats: React.FC = () => {
           />
         </div>
 
-        {!error && (<div className="bg-slate-800/80 rounded-lg border border-slate-700/50 p-6">
-          <h3 className="text-xl font-bold text-white mb-6">Linguagens Mais Usadas</h3>
-          <div className="space-y-4">
-            {Object.entries(languages)
-              .sort((a, b) => b[1] - a[1])
-              .slice(0, 10)
-              .map(([lang, percent]) => (
-                <div key={lang}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-gray-300">{lang}</span>
-                    <span className="text-gray-400">{percent}%</span>
-                  </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2.5">
-                    <div
-                      className="h-2.5 rounded-full"
-                      style={{
-                        width: `${percent}%`,
-                        backgroundColor: getLanguageColor(lang),
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>)}
 
       </div>
     </section>
